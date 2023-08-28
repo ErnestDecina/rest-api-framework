@@ -9,6 +9,7 @@ import { application_name, is_development } from "./config/application.config";
 import { express_port, api_version } from "./config/express.config";
 import { Server } from "net";
 import Logger from "./utils/logger";
+import { DatabasePostgres } from "./database/config";
 
 function startExpressServer(): Server {
     const express_server = createExpressServer();

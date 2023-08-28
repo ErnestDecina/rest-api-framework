@@ -29,7 +29,7 @@ const logger_colours = {
  * @returns String if debug is enabled
  */
 function logger_level() {
-    return application_config_1.is_development ? 'debug' : 'warn';
+    return application_config_1.is_development ? 'debug' : 'http';
 }
 winston.addColors(logger_colours);
 // String Format
