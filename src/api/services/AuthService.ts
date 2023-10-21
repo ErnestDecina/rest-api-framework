@@ -60,10 +60,7 @@ class AuthService implements IAuthService {
 
         const hashed_password = bcrypt.hashSync(payload.password, 5);
 
-        const id_number: SelectMaxType[] = await DatabasePostgres.query("SELECT max(id) FROM users", { type: QueryTypes.SELECT });
-
         return UserRepository.createUser({
-            id: id_number[0].max + 1,
             email: payload.email,
             username: payload.username,
             password: hashed_password
