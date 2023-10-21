@@ -81,7 +81,7 @@ User.init(
 );
 
 User.belongsTo(Role, {
-    as: 'users_pkey',
+    as: 'roles',
     foreignKey: 'role_id'
 });
 

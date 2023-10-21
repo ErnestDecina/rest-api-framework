@@ -33,7 +33,7 @@ class UserRepository implements IUserRepository {
             include: [
                 {
                     model:Role,
-                    as: 'user_role',
+                    as: 'roles',
                     required: false
                 }
             ]

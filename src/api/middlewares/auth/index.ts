@@ -5,7 +5,8 @@
  */
 
 import { NextFunction, Request, Response } from 'express';
-import JWT from 'src/utils/jwt';
+import UserRepository from '../../repositories/UserRepository';
+import JWT from '../../../utils/jwt';
 
 class Auth {
     /**
@@ -35,7 +36,7 @@ class Auth {
         } // End if
 
         const user_id: number = payload.id;
-        const user_data = 0; // TODO: Create User Repo
+        const user_data = await UserRepository.getUserDetail(user_id);
 
         if (!user_data) {
             res.sendStatus(401);
@@ -43,7 +44,7 @@ class Auth {
         } // End if
 
         req.body = user_data;
-
+    
         next();
     } // End authenticate
 

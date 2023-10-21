@@ -10,6 +10,9 @@ import { express_port, api_version } from "./config/express.config";
 import { Server } from "net";
 import Logger from "./utils/logger";
 import { DatabasePostgres } from "./database/config";
+import { docker_api } from "./utils/docker";
+
+docker_api
 
 function startExpressServer(): Server {
     const express_server = createExpressServer();
